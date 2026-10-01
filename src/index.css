@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  --color-velvet-canvas: #120B17;
+  --color-velvet-nav: #17101D;
+  --color-velvet-shell: #17101D;
+  --color-velvet-plane: #1C121F;
+  --color-velvet-card: #221823;
+  --color-velvet-hover: #2A1E2A;
+  --color-velvet-recessed: #19131C;
+  --color-velvet-border: rgba(255, 249, 247, 0.08);
+
+  --color-velvet-text-primary: #F7F1F3;
+  --color-velvet-text-secondary: #B9AEB6;
+  --color-velvet-text-tertiary: rgba(185, 174, 182, 0.5);
+
+  --color-brand-coral: #FF5757;
+  --color-pastel-rose: #D9A7B4;
+  --color-pastel-apricot: #D9AF8D;
+  --color-pastel-lilac: #B7A1CC;
+  --color-pastel-sage: #9EBCAB;
+  --color-velvet-danger: #9E2A3B;
+
+  --color-part-tenor: #D9A7B4;
+  --color-part-lead: #D9AF8D;
+  --color-part-baritone: #9EBCAB;
+  --color-part-bass: #B7A1CC;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #120B17;
+    color: #F7F1F3;
+  }
+
+  .font-brand {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-tagline, .font-satisfy {
+    font-family: 'Satisfy', cursive, sans-serif;
+  }
+
+  .font-yellowtail {
+    font-family: 'Yellowtail', cursive, sans-serif;
+  }
+
+  .font-kaushan {
+    font-family: 'Kaushan Script', cursive, sans-serif;
+  }
+}
+
+/* Quiet Velvet Studio Design System Utilities */
+.bg-velvet-canvas {
+  background-color: #120B17;
+}
+
+.bg-velvet-nav {
+  background-color: #17101D;
+}
+
+.bg-velvet-shell {
+  background-color: #17101D;
+}
+
+.bg-velvet-plane {
+  background-color: #1C121F;
+}
+
+.bg-velvet-card {
+  background-color: #221823;
+}
+
+.bg-velvet-hover {
+  background-color: #2A1E2A;
+}
+
+.bg-velvet-recessed {
+  background-color: #19131C;
+}
+
+.border-velvet-border {
+  border-color: rgba(255, 249, 247, 0.08);
+}
+
+.text-velvet-primary {
+  color: #F7F1F3;
+}
+
+.text-velvet-secondary {
+  color: #B9AEB6;
+}
+
+.text-brand-coral {
+  color: #FF5757;
+}
+
+.bg-brand-coral {
+  background-color: #FF5757;
+}
+
+/* Backward-compatible aliases for legacy helper classes */
+.bg-track-dark {
+  background-color: #120B17;
+}
+
+.bg-track-surface {
+  background-color: #17101D;
+}
+
+.bg-track-card {
+  background-color: #221823;
+}
+
+.bg-track-card-hover {
+  background-color: #2A1E2A;
+}
+
+.bg-track-coral {
+  background-color: #FF5757;
+}
+
+.text-track-coral {
+  color: #FF5757;
+}
+
+.border-track-border {
+  border-color: rgba(255, 249, 247, 0.08);
+}
+
+.border-track-coral {
+  border-color: #FF5757;
+}
+
+/* Custom sleek scrollbars in Quiet Velvet Studio aubergine */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #120B17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A1E2A;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #362637;
+}
+
+/* Heart & Star Pop & Sprite Burst Particle Animations */
+@keyframes heart-pop {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.45) rotate(-8deg); }
+  60% { transform: scale(0.9) rotate(4deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes star-pop {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.45) rotate(14deg); }
+  60% { transform: scale(0.9) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes sprite-float {
+  0% {
+    transform: translate(0, 0) scale(0.3);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1.15) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+.animate-heart-pop {
+  animation: heart-pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-star-pop {
+  animation: star-pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-sprite-burst {
+  animation: sprite-float 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile landscape full-screen score takeover - zero controls or title bars */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .mobile-score-active #studio-rehearsal-header,
+  .mobile-score-active #studio-transport-deck {
+    display: none !important;
+  }
+  .mobile-score-active .mobile-score-canvas-container {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+
+
+

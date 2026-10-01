@@ -1,0 +1,9 @@
+{
+  "name": "Trackappella",
+  "description": "Trackappella is a robust vocal arrangement music player and library. Browse synchronized multitracks, isolate vocal parts, rehearse with minus-one stems, perform live in stage mode, and manage chorus and quartet repertoire.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+
